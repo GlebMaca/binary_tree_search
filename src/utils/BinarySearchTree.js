@@ -74,6 +74,13 @@ class BinarySearchTree {
   }
 
   remove(data) {
+    var findMinNode=function(node) {
+      if (node.left === null) {
+        return node;
+      } else {
+        return findMinNode(node.left);
+      }
+    }
     function removeData(nodes, datas) {
       if (nodes === null) {
         return null;
@@ -94,7 +101,10 @@ class BinarySearchTree {
           nodes = nodes.left;
           return nodes;
         }
-        const min = this.findMinNode(nodes.right);
+        
+       
+        
+        const min = findMinNode(nodes.right);
         nodes.data = min.data;
         nodes.right = removeData(nodes.right, min.data);
         return nodes;

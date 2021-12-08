@@ -73,6 +73,7 @@ input {
 
 .tf-custom {
   width: 100%;
+  overflow: unset;
 }
 
 .tf-custom ul {
@@ -94,3 +95,4 @@ input {
   justify-content: center;
   align-items: center;
 }
+
